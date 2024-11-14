@@ -1,15 +1,21 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-import { Link } from "react-router-dom";
 import logo from './Asset/Group 749.png';
-import backgroundImage from "./Asset/Pattern.png"; // Replace with your background image path
+import backgroundImage from "./Asset/Pattern.png";
 
 const LoginMain = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // Perform any authentication logic here if needed
+    navigate("/edit-profile"); // Navigate to Edit Profile page on successful login
+  };
 
   return (
     <div className="flex min-h-screen bg-red-200 gap-6 justify-center items-center mx-auto bg-opacity-50 rounded-lg">
-      {/* Left Side with Welcome Message */}
       <div
         className="w-1/2 flex items-center justify-center min-h-screen bg-cover bg-center"
         style={{ backgroundImage: `url(${backgroundImage})` }}
@@ -22,12 +28,12 @@ const LoginMain = () => {
         </div>
       </div>
 
-      {/* Right Side with Form */}
-      <div className="w-1/2 flex flex-col ">
+      <div className="w-1/2 flex flex-col">
         <img src={logo} alt="Logo" className="mb-4 w-20" />
         <h1 className="text-5xl mt-5 mx-10">Log in</h1>
-        <p className="text-gray-700 my-5 mx-10">Sign in to your account on trade connect</p>
-        <form className="space-y-4 items-center mx-10 justify-center w-3/4">
+        <p className="text-gray-700 my-5 mx-10">Sign in to your account on Trade Connect</p>
+        
+        <form className="space-y-4 items-center mx-10 justify-center w-3/4" onSubmit={handleLogin}>
           <div>
             <label className="block black font-semibold">Email</label>
             <input
@@ -55,32 +61,8 @@ const LoginMain = () => {
             </button>
           </div>
 
-          <div className="flex justify-end">
-            <Link to="/forgot-password" className="text-sm text-red-500">
-              Forgot Password?
-            </Link>
-          </div>
-
-          <button
-            type="submit"
-            className="w-full py-3 bg-red-800 text-white rounded mt-4"
-          >
+          <button type="submit" className="w-full py-3 bg-red-800 text-white rounded mt-4">
             Log In
-          </button>
-
-          <p className="text-center text-gray-600 mt-4">
-            Don’t have an account?{" "}
-            <Link to="/signup-main" className="text-red-500">
-              Sign up
-            </Link>
-          </p>
-
-          <button
-            type="button"
-            className="flex items-center justify-center w-full py-2 border border-gray-300 rounded mt-4"
-          >
-            <img src="/google-icon.png" alt="Google" className="h-5 mr-2" />
-            Sign in with Google
           </button>
         </form>
       </div>
