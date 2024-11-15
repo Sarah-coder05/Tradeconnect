@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import eye icons
+import { FaEye, FaEyeSlash } from "react-icons/fa"; 
 import image from "./Asset/image1.png";
 
 function CreatePassword() {
@@ -38,7 +38,6 @@ function CreatePassword() {
 
   return (
     <div className="flex justify-center gap-10 items-center min-h-screen w-full">
-      {/* Left Side with Animated Background */}
       <div className="w-1/2 relative animate-parallax">
         <img
           src={image}
@@ -46,8 +45,6 @@ function CreatePassword() {
           className="fixed inset-0 h-full w-1/2 border rounded-50% bg-red-100 object-cover"
         />
       </div>
-
-      {/* Form Section with Animation */}
       <div className="w-1/2 items-center mx-10 p-4 justify-center animate-fadeIn">
         <form onSubmit={handleSubmit} className="space-y-4 shadow ml-10 p-10 w-3/5">
           <h2 className="text-start text-4xl font-semibold">Reset Password</h2>

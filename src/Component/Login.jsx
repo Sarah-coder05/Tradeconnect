@@ -16,7 +16,6 @@ const LoginMain = () => {
 
   return (
     <div className="flex flex-col lg:flex-row min-h-screen bg-red-200 gap-6 justify-center items-center mx-auto bg-opacity-50 rounded-lg p-4">
-      {/* Animated Welcome Section */}
       <div
         className="w-full lg:w-1/2 flex items-center justify-center min-h-[50vh] lg:min-h-screen bg-cover bg-center mb-4 lg:mb-0 animate-fadeIn"
         style={{ backgroundImage: `url(${backgroundImage})` }}
@@ -30,10 +29,7 @@ const LoginMain = () => {
           </p>
         </div>
       </div>
-
-      {/* Animated Login Form */}
       <div className="w-full lg:w-1/2 flex flex-col items-center relative animate-slideIn">
-        {/* Animated Logo */}
         <div className="w-full flex justify-center left-0 fixed top-0 animate-pulse">
           <img src={logo} alt="Logo" className="w-16 lg:w-20 mb-4" />
         </div>

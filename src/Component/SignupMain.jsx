@@ -6,7 +6,6 @@ import logo from "./Asset/Group 749.png";
 const SignupMain = () => (
   <div className="bg-orange-300 bg-opacity-30 min-h-screen flex flex-col lg:flex-row">
     <div className="w-full lg:w-1/2 flex flex-col items-center justify-center relative p-4 flex-grow">
-      {/* Logo positioned at the top for all screen sizes */}
       <div className="w-full flex justify-center fixed top-0">
         <img src={logo} alt="Logo" className="w-16 lg:w-20 mb-4" />
       </div>

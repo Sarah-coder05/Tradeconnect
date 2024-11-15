@@ -12,7 +12,6 @@ const EditProfile = () => {
     <div style={{ backgroundColor: '', minHeight: '100vh' }} className="p-8">
       <h1 className="text-2xl font-semibold">Edit Profile</h1>
       <div className="mt-6">
-        {/* Grid container with two columns and spacing between rows */}
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label>First Name</label>
@@ -30,13 +29,11 @@ const EditProfile = () => {
             <label>Address</label>
             <input type="text" placeholder="Address" className="w-full p-2 border" />
           </div>
-          {/* Span Pricing across both columns */}
           <div className="">
             <label>Pricing</label>
             <input type="text" placeholder="Pricing" className="w-full p-2 border" />
           </div>
         </div>
-        {/* Button on its own line */}
         <button
           type="button"
           onClick={handleContinue}

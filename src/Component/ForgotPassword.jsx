@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from './Asset/Group 749.png';
-import image from "./Asset/image1.png"; // Replace with your background image path
+import image from "./Asset/image1.png"; 
 
 const ForgotPassword = () => {
   return (
@@ -17,7 +17,6 @@ const ForgotPassword = () => {
 
       {/* Right Side with Form */}
       <div className="w-1/2 flex ml-10 flex-col animate-slideIn">
-        {/* Logo at the Top */}
         <img src={logo} alt="Logo" className="mb-4 absolute top-0 w-20 animate-pulse" />
 
         <form className="shadow ml-10 p-5 w-3/5 mx-5">

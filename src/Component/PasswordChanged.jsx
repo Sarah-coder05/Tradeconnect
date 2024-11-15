@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from './Asset/Group 749.png';
 // import email from './Asset/email.png'
-import image from "./Asset/image1.png"; // Replace with your background image path
+import image from "./Asset/image1.png"; 
 
 const LoginMain = () => {
   return (
@@ -14,7 +14,6 @@ const LoginMain = () => {
       
       {/* Right Side with Form */}
       <div className="w-1/2 ">
-        {/* Logo at the Top */}
         <img src={logo} alt="Logo" className="mb-4 absolute top-0 h-fit w-20" />
         <div className=" w-3/5 shadow p-10 ml-10">
           <h1 className="text-3xl text-center mt-20 mx-10">Password Changed</h1>

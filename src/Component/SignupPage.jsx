@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import image from './Asset/image.png';
+import AOS from 'aos'; 
+import 'aos/dist/aos.css'; 
 
 function SignUp() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
   return (
-    <div className="flex flex-col min-h-screen lg:flex-row justify-center items-center  min-h-screen lg:gap-0 w-full gap-9 bg-gray-100">
+    <div className="flex flex-col min-h-screen lg:flex-row justify-center items-center min-h-screen lg:gap-0 w-full gap-9 bg-gray-100">
       {/* Left Side with Image */}
-      <div className="w-full lg:w-1/3 lg:h-screen flex flex-grow flex-col items-center justify-center">
+      <div className="w-full lg:w-1/3 lg:h-screen flex flex-grow flex-col items-center justify-center" data-aos="fade-right">
         <img
           src={image}
           alt="Logo"
@@ -15,12 +21,12 @@ function SignUp() {
       </div>
 
       {/* Right Side with Sign-Up Form */}
-      <div className="w-full lg:w-2/3 p-10 flex justify-center">
+      <div className="w-full lg:w-2/3 p-10 flex justify-center" data-aos="fade-left">
         <form className="space-y-4 w-full lg:w-3/5 lg:shadow-lg lg:p-5">
           <h2 className="text-3xl lg:text-4xl font-bold text-start lg:ml-10">Sign Up</h2>
           <p className="text-gray-600 text-lg mb-4 text-start lg:ml-10">Let's get you started</p>
-          
-          <div>
+
+          <div data-aos="fade-up">
             <label className="block font-semibold text-start lg:ml-10">First Name</label>
             <input
               type="text"
@@ -29,8 +35,8 @@ function SignUp() {
               className="w-full lg:w-4/5 p-2 border-2 border-red-800 opacity-60 rounded lg:ml-10"
             />
           </div>
-          
-          <div>
+
+          <div data-aos="fade-up" data-aos-delay="200">
             <label className="block font-semibold text-start lg:ml-10">Last Name</label>
             <input
               type="text"
@@ -39,8 +45,8 @@ function SignUp() {
               className="w-full lg:w-4/5 p-2 border-2 border-red-800 opacity-60 rounded lg:ml-10"
             />
           </div>
-          
-          <div>
+
+          <div data-aos="fade-up" data-aos-delay="400">
             <label className="block font-semibold text-start lg:ml-10">Email</label>
             <input
               type="email"
@@ -49,12 +55,12 @@ function SignUp() {
               className="w-full lg:w-4/5 p-2 border-2 border-red-800 opacity-60 rounded lg:ml-10"
             />
           </div>
-          
-          <button className="w-full lg:w-4/5 bg-red-800 text-white p-2 rounded lg:ml-10">
+
+          <button className="w-full lg:w-4/5 bg-red-800 text-white p-2 rounded lg:ml-10" data-aos="fade-up" data-aos-delay="600">
             <Link to="/Create-password">Next</Link>
           </button>
-          
-          <div className="text-center lg:text-start lg:ml-10 mt-4">
+
+          <div className="text-center lg:text-start lg:ml-10 mt-4" data-aos="fade-up" data-aos-delay="800">
             <p>
               Already have an account? <Link to="/" className="text-red-500">Log In</Link>
             </p>
