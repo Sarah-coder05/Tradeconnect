@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import logo from './Asset/Group 749.png';
+import { Link } from "react-router-dom";
 import backgroundImage from "./Asset/Pattern.png";
 
 const LoginMain = () => {
@@ -10,32 +11,35 @@ const LoginMain = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Perform any authentication logic here if needed
-    navigate("/edit-profile"); // Navigate to Edit Profile page on successful login
+    navigate("/edit-profile");
   };
 
   return (
-    <div className="flex min-h-screen bg-red-200 gap-6 justify-center items-center mx-auto bg-opacity-50 rounded-lg">
+    <div className="flex flex-col lg:flex-row min-h-screen bg-red-200 gap-6 justify-center items-center mx-auto bg-opacity-50 rounded-lg p-4">
       <div
-        className="w-1/2 flex items-center justify-center min-h-screen bg-cover bg-center"
+        className="w-full lg:w-1/2 flex items-center justify-center min-h-[50vh] lg:min-h-screen bg-cover bg-center mb-4 lg:mb-0"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <div className="p-16 text-center bg-red-200 bg-opacity-60 rounded-lg shadow-lg w-3/6 min-h-[300px]">
-          <h1 className="text-2xl pb-4 text-red-800 font-bold">Welcome Back to Trade Connect!</h1>
-          <p className="text-red-800 text-lg mt-2">
+        <div className="p-8 lg:p-16 text-center bg-red-200 bg-opacity-60 rounded-lg shadow-lg w-5/6 lg:w-3/6 min-h-[200px] lg:min-h-[300px]">
+          <h1 className="text-xl lg:text-2xl pb-4 text-red-800 font-bold">Welcome Back to Trade Connect!</h1>
+          <p className="text-red-800 text-sm lg:text-lg mt-2">
             Log in to your account and continue planning your dream event with ease.
           </p>
         </div>
       </div>
 
-      <div className="w-1/2 flex flex-col">
-        <img src={logo} alt="Logo" className="mb-4 w-20" />
-        <h1 className="text-5xl mt-5 mx-10">Log in</h1>
-        <p className="text-gray-700 my-5 mx-10">Sign in to your account on Trade Connect</p>
+      <div className="w-full lg:w-1/2 flex flex-col items-center relative">
+        {/* Logo positioned absolutely at the top left */}
+        <div className="w-full flex justify-center left-0 fixed top-0 ">
+          <img src={logo} alt="Logo" className="w-16 lg:w-20 mb-4" />
+        </div>
         
-        <form className="space-y-4 items-center mx-10 justify-center w-3/4" onSubmit={handleLogin}>
-          <div>
-            <label className="block black font-semibold">Email</label>
+        <form className="space-y-4 items-center mx-auto w-full lg:w-3/5 p-5 shadow-lg rounded-lg mt-16 lg:mt-0" onSubmit={handleLogin}>
+          <h1 className="text-3xl lg:text-5xl mt-5">Log in</h1>
+          <p className="text-gray-700 my-5 text-center lg:text-left">Sign in to your account on Trade Connect</p>
+          
+          <div className="w-full px-2 lg:px-0">
+            <label className="block text-black font-semibold">Email</label>
             <input
               type="email"
               placeholder="johndoe@gmail.com"
@@ -44,8 +48,8 @@ const LoginMain = () => {
             />
           </div>
 
-          <div className="relative">
-            <label className="block black font-semibold">Password</label>
+          <div className="relative w-full px-2 lg:px-0">
+            <label className="block text-black font-semibold">Password</label>
             <input
               type={showPassword ? "text" : "password"}
               placeholder="Password"
@@ -55,15 +59,26 @@ const LoginMain = () => {
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute inset-y-0 right-3 pt-5 flex items-center text-gray-500"
+              className="absolute inset-y-0 right-3 top-1/2 transform -translate-y-1/2 flex items-center text-gray-500"
             >
               {showPassword ? <FiEyeOff /> : <FiEye />}
             </button>
           </div>
 
-          <button type="submit" className="w-full py-3 bg-red-800 text-white rounded mt-4">
+          <div className="flex justify-end w-full px-2 lg:px-0">
+            <a href="/forgot-password" className="text-sm text-red-500">Forgot Password?</a>
+          </div>
+          
+          <button type="submit" className="w-full lg:w-4/5 mx-auto py-2 hover:bg-red-700 bg-red-800 px-7 grid justify-items-center text-white rounded mt-4">
             Log In
           </button>
+
+          <p className="text-center text-gray-600 mt-4">
+            Don’t have an account?{" "}
+            <Link to="/signup-main" className="text-red-500">
+              Sign up
+            </Link>
+          </p>
         </form>
       </div>
     </div>

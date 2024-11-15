@@ -15,13 +15,12 @@ const LoginMain = () => {
       {/* Right Side with Form */}
       <div className="w-1/2 flex flex-col ">
         {/* Logo at the Top */}
-        <img src={logo} alt="Logo" className="mb-4 w-20" />
+        <img src={logo} alt="Logo" className="mb-4 absolute top-0 w-20" />
         
         {/* Form Content */}
+        <div className="my-10 shadow p-5 w-3/5 mx-10">
         <h1 className="text-3xl text-center mt-20 mx-10"><img src={email} alt="Logo" className=" mx-auto w-20" /></h1>
-        <p className="text-gray-700 text-center my-5 mx-10">A link has been sent to your Email</p>
-        
-        <div className="space-y-4 w-3/4 mx-10">
+        <p className="text-gray-700 text-center pt-7 mx-10">A link has been sent to your Email</p>
           <button
             type="submit"
             className="w-full py-3 bg-red-800 text-white rounded mt-4"

@@ -42,11 +42,11 @@ function CreatePassword() {
         <img src={image} alt="Logo" className="fixed inset-0 h-full w-1/2 border rounded-50% bg-red-100 object-cover" />
       </div>
 
-      <div className="w-1/2 items-center mx-10 justify-center">
-        <h2 className="text-start ml-10 text-4xl font-semibold">Reset Password</h2>
-        <p className="ml-10 text-start mb-6 mt-3 text-gray-600 text-lg">Must be at least 8 characters</p>
-        <form onSubmit={handleSubmit} className="space-y-4 w-full">
-          <div className="relative ml-10 w-3/5">
+      <div className="w-1/2 items-center mx-10 p-4 justify-center">
+        <form onSubmit={handleSubmit} className="space-y-4 shadow ml-10 p-10 w-3/5">
+          <h2 className="text-start text-4xl font-semibold">Reset Password</h2>
+          <p className="text-start mb-6 mt-3 text-gray-600 text-lg">Must be at least 8 characters</p>
+          <div className="relative ">
             <label className="block font-semibold">New Password</label>
             <input
               type={showPassword ? 'text' : 'password'}
@@ -65,7 +65,7 @@ function CreatePassword() {
             {errors.password && <p className="text-red-600 text-sm">{errors.password}</p>}
           </div>
 
-          <div className="relative ml-10 w-3/5">
+          <div className="relative">
             <label className="block font-semibold">Confirm Password</label>
             <input
               type={showPassword ? 'text' : 'password'}
@@ -84,12 +84,12 @@ function CreatePassword() {
             {errors.confirmPassword && <p className="text-red-600 text-sm">{errors.confirmPassword}</p>}
           </div>
 
-          <label className="block ml-10 mb-4">
+          <label className="block mb-4">
             <input type="checkbox" className="mr-2" />
             I agree to the terms and conditions
           </label>
 
-          <p className="mb-4 ml-10">
+          <p className="mb-4 ">
             Already have an account?{' '}
             <Link to="/" className="text-red-500">
               Log In

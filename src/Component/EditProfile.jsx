@@ -9,18 +9,42 @@ const EditProfile = () => {
   };
 
   return (
-    <div className="ml-64 p-8">
+    <div style={{ backgroundColor: '', minHeight: '100vh' }} className="p-8">
       <h1 className="text-2xl font-semibold">Edit Profile</h1>
-      <form className="space-y-4">
-        <input type="text" placeholder="First Name" className="w-full p-2 border" />
-        <input type="text" placeholder="Last Name" className="w-full p-2 border" />
-        <input type="text" placeholder="Business or Service" className="w-full p-2 border" />
-        <input type="text" placeholder="Address" className="w-full p-2 border" />
-        <input type="text" placeholder="Pricing" className="w-full p-2 border" />
-        <button type="button" onClick={handleContinue} className="mt-4 bg-red-600 text-white py-2 px-4">
+      <div className="mt-6">
+        {/* Grid container with two columns and spacing between rows */}
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label>First Name</label>
+            <input type="text" placeholder="First Name" className="w-full p-2 border" />
+          </div>
+          <div>
+            <label>Last Name</label>
+            <input type="text" placeholder="Last Name" className="w-full p-2 border" />
+          </div>
+          <div>
+            <label>Business or Service</label>
+            <input type="text" placeholder="Business or Service" className="w-full p-2 border" />
+          </div>
+          <div>
+            <label>Address</label>
+            <input type="text" placeholder="Address" className="w-full p-2 border" />
+          </div>
+          {/* Span Pricing across both columns */}
+          <div className="">
+            <label>Pricing</label>
+            <input type="text" placeholder="Pricing" className="w-full p-2 border" />
+          </div>
+        </div>
+        {/* Button on its own line */}
+        <button
+          type="button"
+          onClick={handleContinue}
+          className="absolute bottom-0 bg-red-600 text-white py-2 px-4"
+        >
           Continue
         </button>
-      </form>
+      </div>
     </div>
   );
 };

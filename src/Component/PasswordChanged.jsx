@@ -15,12 +15,10 @@ const LoginMain = () => {
       {/* Right Side with Form */}
       <div className="w-1/2 ">
         {/* Logo at the Top */}
-        <img src={logo} alt="Logo" className="mb-4 h-fit w-20" />
-    
-        <h1 className="text-3xl text-center mt-20 mx-10">Password Changed</h1>
-        <p className="text-gray-700 text-center my-5 mx-10">Your password has been Successfully changed</p>
-        
-        <div className=" w-3/4 mx-10">
+        <img src={logo} alt="Logo" className="mb-4 absolute top-0 h-fit w-20" />
+        <div className=" w-3/5 shadow p-10 ml-10">
+          <h1 className="text-3xl text-center mt-20 mx-10">Password Changed</h1>
+          <p className="text-gray-700 text-center my-5 mx-10">Your password has been Successfully changed</p>
           <button
             type="submit"
             className="w-full py-3 bg-red-800 text-white rounded mt-4"

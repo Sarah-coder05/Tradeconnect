@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import logo from './Asset/Group 749.png';
 import image from "./Asset/image1.png"; // Replace with your background image path
 
-const LoginMain = () => {
+const ForgotPassword = () => {
   return (
     <div className="flex min-h-screen bg-red-200 gap-6 justify-center items-center mx-auto bg-opacity-50 rounded-lg">
       {/* Left Side with Background Image */}
@@ -12,16 +12,14 @@ const LoginMain = () => {
       </div>
       
       {/* Right Side with Form */}
-      <div className="w-1/2 flex flex-col ">
+      <div className="w-1/2 flex ml-10 flex-col ">
         {/* Logo at the Top */}
-        <img src={logo} alt="Logo" className="mb-4 w-20" />
+        <img src={logo} alt="Logo" className="mb-4 absolute top-0 w-20" />
         
-        {/* Form Content */}
+        <form className=" shadow ml-10 p-5 w-3/5 mx-5">
         <h1 className="text-3xl text-center mt-20 mx-10">Forgot Password?</h1>
         <p className="text-gray-700 text-center text-semibold">Not to worry, we will send you reset instructions.</p>
         <p className="text-gray-700 text-center">Enter your registered Email Address to receive reset instructions.</p>
-        
-        <form className="space-y-4  mx-10">
           <div className="relative">
             <label className="block text-black pb-1 font-semibold">Email</label>
             <input
@@ -53,4 +51,4 @@ const LoginMain = () => {
   );
 };
 
-export default LoginMain;
+export default ForgotPassword;

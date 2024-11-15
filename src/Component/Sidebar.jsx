@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { CgProfile } from "react-icons/cg";
 import { FiHome, FiUser, FiMessageCircle, FiSearch, FiDollarSign, FiSettings } from "react-icons/fi"; // Sample icons
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
@@ -57,9 +58,12 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       <div className="flex items-center text-white mt-4 p-2">
           <div className="flex items-center">
             {isOpen && (
-              <div className="text-sm">
+              <div className="flex absolute bottom-0 pb-10 text-sm">
+                <div className="pt-4 "><CgProfile className="w-10"/></div>
+                <div>
                 <p>Jane Doe</p>
                 <p>jane@domain.com</p>
+                </div>
               </div>
             )}
           </div>
