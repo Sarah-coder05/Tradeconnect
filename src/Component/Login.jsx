@@ -11,7 +11,7 @@ const LoginMain = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    navigate("/edit-profile");
+    navigate("/dashboard");
   };
 
   return (
